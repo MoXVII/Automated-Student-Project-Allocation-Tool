@@ -7,14 +7,12 @@ This is a project aims to use the assistance of evolutionary algorithm to be abl
 
 # Variants of the tool
 
-As of right now, there are two versions of the tool. The IDE version runs from any IDE (tested on Eclipse 4.7 STS on MacOSX) by simply executing the run command. Alternatively, the second version is in the form of a Spring Web Application and uses a model-view-controller architecture to manage the allocation process and persists the final results using a MySQL back-end database. This version of the tool is run using terminal by:
+As of right now, there are two versions of the tool. The IDE version runs from any IDE (tested on Eclipse 4.7 STS on MacOSX) by simply executing the run command. Alternatively, the second version is in the form of a Spring Web Application and uses a model-view-controller architecture to manage the allocation process and persists the final results using a MySQL back-end database. This version of the tool is run using terminal by navigating to the location you have stored the StuProjectAllocation folder and executing the following:
+
+
 
 ```
-Navigating to the location you have stored the StuProjectAllocation folder
-```
-
-```
-Executing the following: gradle bootrunm
+gradle bootrunm
 ```
 This will initiallise and boot the application. Next you will want to open a browser and navigate to:
 
