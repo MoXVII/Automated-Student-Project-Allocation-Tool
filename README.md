@@ -12,7 +12,7 @@ As of right now, there are two versions of the tool. The IDE version runs from a
 
 
 ```
-gradle bootrunm
+gradle bootrun
 ```
 This will initiallise and boot the application. Next you will want to open a browser and navigate to:
 
