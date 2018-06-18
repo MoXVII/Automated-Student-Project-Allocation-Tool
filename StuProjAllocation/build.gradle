@@ -1,0 +1,66 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+		classpath("org.springframework:springloaded:1.2.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+
+jar {
+	baseName = 'StuProjAllocation'
+	version = '1'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+eclipse {
+	project {
+	  name = 'StuProjAllocation'
+	  buildCommand 'org.eclipse.jdt.core.javabuilder'
+	  buildCommand 'org.eclipse.buildship.core.gradleprojectbuilder'
+	  buildCommand 'org.springframework.ide.eclipse.core.springbuilder'
+	  buildCommand 'org.eclipse.wst.common.project.facet.core.builder'
+	  natures 'org.eclipse.jdt.core.javanature', 'org.eclipse.buildship.core.gradleprojectnature', 'org.springframework.ide.eclipse.core.springnature', 'org.eclipse.wst.common.project.facet.core.nature'
+	}
+}
+
+dependencies {
+	
+	compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}") 
+
+	testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+	// JSP
+	compile("org.apache.tomcat.embed:tomcat-embed-jasper:9.0.0.M11")
+	compile("javax.servlet:jstl:1.2")
+
+	// bootstrap 
+	compile("org.webjars:bootstrap:3.3.7")
+	// persistence
+	compile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+	runtime("mysql:mysql-connector-java")
+	// security
+	compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+	testCompile("org.springframework.security:spring-security-test")
+//	testCompile("org.springframework.security:spring-security-test:4.0.1.RELEASE")
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '4.0'
+}
+
